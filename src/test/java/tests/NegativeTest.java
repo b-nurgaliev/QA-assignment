@@ -34,15 +34,15 @@ public class NegativeTest extends BaseTest {
 		mainPage
 				.clickDefaultQuestion();
 
-		int numberOfAnswers = mainPage.getNumberOfAnswers();
+		int numberOfAnswers = mainPage.getAnswersCountBefore();
 
 		mainPage
 				.sendAnswer(SOME_TEXT)
 				.clickCreateQuestionButton();
-		int numberOfAnswersNew = mainPage.numberOfAnswersNew();
+		int numberOfAnswersNew = mainPage.getAnswersCountAfter();
 
 		mainPage
-				.compareAnswersSize();
+				.compareAnswersSize(numberOfAnswers, numberOfAnswersNew);
 
 	}
 }

@@ -28,6 +28,10 @@ public class MainPage {
 	public static final By ANSWER_LOCATOR = By.xpath("//p[@class='question__answer ']");
 	public static final By HIDDEN_ANSWER_LOCATOR = By.xpath("//p[@class='question__answer hidden-xl-down']");
 
+	public Integer getNumberOfAnswers()
+	{
+		return Integer.parseInt(String.valueOf(getDriver().findElements(ANSWER_LOCATOR).size()));
+	}
 
 	public MainPage sendQuestion(String question) {
 		getDriver().findElement(QUESTION_FIELD_LOCATOR).sendKeys(question);
@@ -128,53 +132,60 @@ public class MainPage {
 		Assertions.assertTrue(actualQuestionResult.contains(PENGUINS_QUESTION));
 		return this;
 	}
-	public void compareActualAnswers() {
+	public MainPage compareActualAnswers() {
 		String actualAnswerResult = getDriver().findElement(SECOND_ANSWER_LOCATOR).getText();
 		Assertions.assertTrue(actualAnswerResult.contains(PENGUINS_ANSWER));
+		return this;
 	}
 
-	public void compareAddedQuestion() {
+	public MainPage compareAddedQuestion() {
 		Assertions.assertTrue(getDriver().findElements(QUESTION_LOCATOR).get(1).getText().contains(PENGUINS_QUESTION));
+		return this;
 	}
 
-	public void compareAddedAnswer() {
+	public MainPage compareAddedAnswer() {
 		Assertions.assertTrue(getDriver().findElement(ANSWER_LOCATOR).getText().contains(PENGUINS_ANSWER));
+		return this;
 	}
 
 	public void validateThatQuestionsCleared() {
 		Assertions.assertTrue(getDriver().findElement(EMPTY_QUESTIONS_LOCATOR).getText().contains(NO_QUESTIONS));
 	}
 
-	public void checkNumericQuestion() {
+	public MainPage checkNumericQuestion() {
 		Assertions.assertTrue(getDriver().findElements(QUESTION_LOCATOR).get(0).getText().contains(NUMERIC_QUESTION));
+		return this;
 	}
 
-	public void checkPenguinsQuestion() {
+	public MainPage checkPenguinsQuestion() {
 		Assertions.assertTrue(getDriver().findElements(QUESTION_LOCATOR).get(1).getText().contains(PENGUINS_QUESTION));
+		return this;
 	}
 
-	public void checkDefaultQuestion(){
+	public MainPage checkDefaultQuestion(){
 		Assertions.assertTrue(getDriver().findElements(QUESTION_LOCATOR).get(2).getText().contains(DEFAULT_QUESTION));
+		return this;
 	}
 
-	public void getQuestionsCountBefore() {
-		int numberOfQuestions = getDriver().findElements(QUESTION_LOCATOR).size();
+	public Integer getQuestionsCountBefore() {
+		return Integer.parseInt(String.valueOf(getDriver().findElements(QUESTION_LOCATOR).size()));
 	}
 
-	public void getQuestionsCountAfter() {
-		int numberOfQuestionsNew = getDriver().findElements(QUESTION_LOCATOR).size();
+	public Integer getQuestionsCountAfter() {
+		return Integer.parseInt(String.valueOf(getDriver().findElements(QUESTION_LOCATOR).size()));
 	}
 
-	public void compareQuestionsSize(int numberOfQuestions, int numberOfQuestionsNew) {
+	public MainPage compareQuestionsSize(int numberOfQuestions, int numberOfQuestionsNew) {
 		Assertions.assertEquals(numberOfQuestions, numberOfQuestionsNew);
+		return  this;
 	}
 
 	public void getAnswersCountBefore() {
-		int numberOfAnswers = getDriver().findElements(ANSWER_LOCATOR).size();
+		return Integer.parseInt(String.valueOf(getDriver().findElements(ANSWER_LOCATOR).size()));
 	}
 
 	public void getAnswersCountAfter() {
-		int numberOfAnswersNew = getDriver().findElements(ANSWER_LOCATOR).size();
+		return Integer.parseInt(String.valueOf(getDriver().findElements(ANSWER_LOCATOR).size()));
 	}
 
 	public void compareAnswersSize(int numberOfAnswers, int numberOfAnswersNew){

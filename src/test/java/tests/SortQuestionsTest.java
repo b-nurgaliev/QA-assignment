@@ -1,7 +1,7 @@
 package tests;
 
 import base.BaseTest;
-import io.qameta.allure.Description;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import page.MainPage;
 
@@ -12,7 +12,7 @@ public class SortQuestionsTest extends BaseTest {
 	MainPage mainPage = new MainPage();
 
 	@Test
-	@Description("Checking that sort questions button works properly")
+	@DisplayName("Checking that questions are sorted correctly")
 	public void sortQuestionsCheck() {
 		mainPage
 				.sendQuestion(NUMERIC_QUESTION)

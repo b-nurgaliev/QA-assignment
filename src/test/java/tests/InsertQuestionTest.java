@@ -1,6 +1,7 @@
 package tests;
 
 import base.BaseTest;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import page.MainPage;
@@ -8,7 +9,7 @@ import page.MainPage;
 import static constants.Constants.PENGUINS_ANSWER;
 import static constants.Constants.PENGUINS_QUESTION;
 
-
+@DisplayName("Testing that question and answer can be added")
 public class InsertQuestionTest extends BaseTest {
 
 	MainPage mainPage = new MainPage();

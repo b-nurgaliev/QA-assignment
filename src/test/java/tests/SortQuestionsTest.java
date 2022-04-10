@@ -7,6 +7,7 @@ import page.MainPage;
 
 import static constants.Constants.*;
 
+@DisplayName("Checking that SORT button works")
 public class SortQuestionsTest extends BaseTest {
 
 	MainPage mainPage = new MainPage();

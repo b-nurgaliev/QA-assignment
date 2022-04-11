@@ -7,7 +7,6 @@ import page.MainPage;
 
 @DisplayName("Checking that questions removing works")
 public class RemoveQuestionsTest extends BaseTest {
-
 	MainPage mainPage = new MainPage();
 
 	@Test

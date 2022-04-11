@@ -22,11 +22,6 @@ public class MainPage {
 	public static final By EMPTY_QUESTIONS_LOCATOR = By.xpath("//div[@class='alert alert-danger']");
 	public static final By ANSWER_LOCATOR = By.xpath("//p[@class='question__answer ']");
 
-	public Integer getNumberOfAnswers()
-	{
-		return Integer.parseInt(String.valueOf(getDriver().findElements(ANSWER_LOCATOR).size()));
-	}
-
 	public MainPage sendQuestion(String question) {
 		getDriver().findElement(QUESTION_FIELD_LOCATOR).sendKeys(question);
 		return this;

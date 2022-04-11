@@ -40,6 +40,5 @@ public class NegativeTest extends BaseTest {
 
 		mainPage
 				.compareAnswersSize(numberOfAnswers, numberOfAnswersNew);
-
 	}
 }

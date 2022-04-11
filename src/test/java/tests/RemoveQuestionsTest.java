@@ -13,9 +13,7 @@ public class RemoveQuestionsTest extends BaseTest {
 	@DisplayName("Checking if remove questions button works properly")
 	public void removeQuestions() {
 		mainPage
-				.clickRemoveQuestionsButton();
-
-		mainPage
+				.clickRemoveQuestionsButton()
 				.validateThatQuestionsCleared();
 	}
 }

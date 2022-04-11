@@ -21,11 +21,8 @@ public class InsertQuestionTest extends BaseTest {
 				.sendQuestion(PENGUINS_QUESTION)
 				.sendAnswer(PENGUINS_ANSWER)
 				.clickCreateQuestionButton()
-				.clickSecondQuestion();
-
-		mainPage
-				.compareAddedQuestion();
-		mainPage
+				.clickSecondQuestion()
+				.compareAddedQuestion()
 				.compareAddedAnswer();
 	}
 }

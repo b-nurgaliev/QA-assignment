@@ -21,13 +21,9 @@ public class SortQuestionsTest extends BaseTest {
 				.sendQuestion(PENGUINS_QUESTION)
 				.sendAnswer(PENGUINS_ANSWER)
 				.clickCreateQuestionButton()
-				.clickSortQuestionsButton();
-
-		mainPage
-				.checkNumericQuestion();
-		mainPage
-				.checkPenguinsQuestion();
-		mainPage
+				.clickSortQuestionsButton()
+				.checkNumericQuestion()
+				.checkPenguinsQuestion()
 				.checkDefaultQuestion();
 	}
 }
